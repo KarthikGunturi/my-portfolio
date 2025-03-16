@@ -195,43 +195,78 @@
     right: auto;
   }
 }
-      /* Ensure images are responsive */
-      img {
-        max-width: 100%;
-        height: auto;
-      }
 
-      /* Prevent horizontal overflow */
-      body {
-        overflow-x: hidden;
-      }
-
-      /* Adjust layout for mobile devices */
-      @media (max-width: 768px) {
-        .navbar-brand {
-          font-size: 1.2rem; /* Smaller logo text */
-        }
-        .hero-wrap {
-          padding: 20px 0; /* Reduce padding */
-        }
-        .col-lg-8, .col-lg-4 {
-          width: 100%; /* Stack columns vertically */
-        }
-        .ftco-section {
-          padding: 20px 0; /* Reduce section padding */
-        }
-        .sidebar {
-          margin-top: 20px; /* Add space between main content and sidebar */
-        }
-
-        	html, body {
+/* Global Styles */
+html, body {
   height: 100%;
   overflow-y: auto; /* Allow vertical scrolling */
+  margin: 0;
 }
 
 .container {
   min-height: 100vh; /* Ensure the container takes up the full screen height */
+  position: relative;
+  z-index: 1;
 }
+
+/* Mobile Layout Adjustments */
+@media (max-width: 768px) {
+  /* Navbar Brand */
+  .navbar-brand {
+    font-size: 1.2rem; /* Smaller logo text */
+  }
+
+  /* Hero Section */
+  .hero-wrap {
+    padding: 20px 0; /* Reduce padding */
+    overflow: hidden; /* Prevent overflow */
+  }
+
+  /* Column Layout */
+  .col-lg-8, .col-lg-4 {
+    width: 100%; /* Stack columns vertically */
+    flex: 1 1 100%; /* Ensure proper flexbox behavior */
+  }
+
+  /* Section Padding */
+  .ftco-section {
+    padding: 20px 0; /* Reduce section padding */
+    height: auto; /* Allow content to adjust dynamically */
+    overflow: hidden; /* Prevent overflow */
+  }
+
+  /* Sidebar */
+  .sidebar {
+    margin-top: 20px; /* Add space between main content and sidebar */
+  }
+
+  /* Flexbox Layout for Rows */
+  .row {
+    display: flex;
+    flex-wrap: wrap; /* Ensure columns wrap on smaller screens */
+  }
+}
+
+/* Additional Section and Layout Adjustments */
+.hero-wrap, .ftco-section {
+  overflow: hidden; /* Prevent any content from overflowing */
+  position: relative;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Stack content vertically */
+}
+
+.col-lg-8, .col-lg-4 {
+  flex: 1 1 100%; /* Stack columns vertically for mobile */
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
       }
     </style>
 </head>
